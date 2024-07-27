@@ -21,11 +21,11 @@ const Photo = () => {
           className="w-[300px] h-[300px] xl:h-[420px] xl:w-[420px] "
         >
           <Image
-            src="/file3.jpg"
+            src="/file4.png"
             className="object-cover rounded-full"
             fill
             priority
-            alt=""
+            alt="Profile Picture"
           />
         </motion.div>
       </motion.div>
