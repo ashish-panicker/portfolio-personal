@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="`${font.className}`">
+      <body className="`${font.className}` dark">
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>

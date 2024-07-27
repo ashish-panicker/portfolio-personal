@@ -21,7 +21,7 @@ const Nav = () => {
             href={link.href}
             className={`${
               link.href === pathName && 'border-b-2 border-primary text-primary'
-            } capitalize font-semibold transition-all hover:text-secondary-foreground/70`}
+            } capitalize text-[19px] font-semibold transition-all hover:text-secondary-foreground/70`}
           >
             {link.name}
           </Link>
