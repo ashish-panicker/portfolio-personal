@@ -15,23 +15,23 @@ export default function Home() {
           <div className="text-center xl:text-left order-2 xl:order-none">
             <div className="text-xl mb-6 ">
               <motion.div
-                className="mb-8 "
+                className="mb-4 "
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
                   transition: { delay: 1, duration: 0.2, ease: 'easeInOut' },
                 }}
               >
-                <p className="text-4xl xl:text-5xl xl:mb-2 ">Hello, </p>
-                <p className="xl:text-7xl text-5xl xl:leading-relaxed mt-3">
+                <p className="text-4xl xl:text-5xl ">Hello, </p>
+                <p className="xl:text-7xl text-5xl xl:leading-relaxed ">
                   <span className="xl:text-5xl">I&apos;m </span>
-                  <span className="font-bold text-primary xl:inline block mt-3">
+                  <span className="font-bold text-primary xl:inline ">
                     Ashish Sasidharan
                   </span>
                 </p>
               </motion.div>
               <motion.div
-                className="mb-8 "
+                className="mb-6"
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
