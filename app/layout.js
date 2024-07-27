@@ -1,10 +1,10 @@
-import { Inter } from 'next/font/google'
+import { Roboto_Mono } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/shared/Header'
 import PageTransition from '@/components/shared/PageTransition'
 import StairTransition from '@/components/shared/StairTransition'
 
-const font = Inter({
+const font = Roboto_Mono({
   subsets: ['latin'],
 })
 
@@ -20,6 +20,9 @@ export default function RootLayout({ children }) {
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
+        <footer className="p-2 text-center bg-primary/10 fixed right-0 bottom-0">
+          <p className="text-sm">Ashish S</p>
+        </footer>
       </body>
     </html>
   )
