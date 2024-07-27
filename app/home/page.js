@@ -24,7 +24,7 @@ export default function Home() {
               >
                 <p className="text-4xl xl:text-5xl xl:mb-2 ">Hello, </p>
                 <p className="xl:text-7xl text-5xl xl:leading-relaxed mt-3">
-                  <span className="xl:text-5xl">I'm </span>
+                  <span className="xl:text-5xl">I&apos;m </span>
                   <span className="font-bold text-primary xl:inline block mt-3">
                     Ashish Sasidharan
                   </span>
