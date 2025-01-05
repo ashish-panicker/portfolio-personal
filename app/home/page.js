@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { FiDownload } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 import Stats from '@/components/home/Stats'
+import Clients from '@/components/home/Clients'
 
 export default function Home() {
   return (
@@ -83,7 +84,16 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Stats />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          transition: { delay: 1.5, duration: 0.4, ease: 'easeInOut' },
+        }}
+      >
+        <Stats />
+        <Clients />
+      </motion.div>
     </section>
   )
 }

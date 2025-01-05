@@ -2,13 +2,6 @@
 
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 import { Input } from '@/components/ui/input'
 import { FaPhoneAlt, FaEnvelope, FaMapMarker, FaWhatsapp } from 'react-icons/fa'
 import { motion } from 'framer-motion'
@@ -22,15 +15,6 @@ import {
   FormItem,
   FormMessage,
 } from '@/components/ui/form'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
-import { Calendar } from '@/components/ui/calendar'
-import { cn } from '@/lib/utils'
-import { CalendarIcon } from 'lucide-react'
-import { format } from 'date-fns'
 
 const formSchema = z.object({
   fullname: z.string().min(2, {
@@ -41,12 +25,8 @@ const formSchema = z.object({
     message: 'Please enter a valid phone number.',
   }),
   startDate: z.date().optional(),
-  requirementType: z.string(),
-  requirements: z.string().optional(),
 })
 const info = [
-  { icon: <FaPhoneAlt />, title: 'Phone', text: '(+91) 8921 494 608' },
-  { icon: <FaWhatsapp />, title: 'WhatsApp', text: '(+91) 8921 494 608' },
   { icon: <FaEnvelope />, title: 'Email', text: 'ashish.s.panicker@proton.me' },
   {
     icon: <FaMapMarker />,
@@ -141,86 +121,7 @@ export default function Services() {
                           </FormItem>
                         )}
                       />
-                      <FormField
-                        control={form.control}
-                        name="startDate"
-                        render={({ field }) => (
-                          <FormItem>
-                            {/* <FormLabel className="block mt-3 mb-2">
-                              Tentative Start Date
-                            </FormLabel> */}
-                            <Popover>
-                              <PopoverTrigger asChild>
-                                <FormControl>
-                                  <Button
-                                    className={cn(
-                                      'flex w-full rounded-md bg-background text-sm ring-offset-background  placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-primary/70 focus:border-none',
-                                      !field.value && 'text-muted-foreground'
-                                    )}
-                                    variant={'outline'}
-                                  >
-                                    {field.value ? (
-                                      format(field.value, 'PPP')
-                                    ) : (
-                                      <span className="py-1 px-0">
-                                        Pick a date
-                                      </span>
-                                    )}
-                                    <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                  </Button>
-                                </FormControl>
-                              </PopoverTrigger>
-                              <PopoverContent
-                                className="w-auto p-0"
-                                align="start"
-                              >
-                                <Calendar
-                                  className="border-2 border-primary/70 focus:border-none"
-                                  mode="single"
-                                  selected={field.value}
-                                  onSelect={field.onChange}
-                                  disabled={(date) =>
-                                    date > new Date() ||
-                                    date < new Date('1900-01-01')
-                                  }
-                                  initialFocus
-                                />
-                              </PopoverContent>
-                            </Popover>
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="requirementType"
-                        render={({ field }) => (
-                          <FormItem>
-                            <Select
-                              onValueChange={field.onChange}
-                              defaultValue={field.value}
-                            >
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select the type of requirement" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="FSD">
-                                  Fullstack Development
-                                </SelectItem>
-                                <SelectItem value="Frontend">
-                                  Frontend Development
-                                </SelectItem>
-                                <SelectItem value="cloud">
-                                  Cloud Technologies
-                                </SelectItem>
-                                <SelectItem value="devops">DevOps</SelectItem>
-                                <SelectItem value="other">Others</SelectItem>
-                              </SelectContent>
-                            </Select>
-                          </FormItem>
-                        )}
-                      />
+
                       <FormField
                         control={form.control}
                         name="requirements"
@@ -255,7 +156,7 @@ export default function Services() {
               {info.map((i, index) => {
                 return (
                   <li key={index} className="flex items-center gap-3">
-                    <div className="p-2 w-[36px] xl:w-[72px] h-[36px] xl:h-[72px] flex items-center justify-center md:text-2xl rounded-lg bg-primary/30">
+                    <div className="p-1 w-[36px] xl:w-[48px] h-[36px] xl:h-[48px] flex items-center justify-center md:text-2xl rounded-lg bg-primary/30">
                       {i.icon} <span></span>
                     </div>
                     <div>

@@ -21,7 +21,7 @@ const Header = () => {
           <Nav />
           <Link href="/contact">
             <Button className="text-[17px] font-semibold" size="lg">
-              Hire Me
+              Get In Touch
             </Button>
           </Link>
         </div>

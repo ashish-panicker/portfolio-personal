@@ -1,0 +1,50 @@
+<Collapsible
+                  isOpen={isOpen}
+                  onOpenChange={setIsOpen}
+                  key={service.id}
+                  className="CollapsibleContent flex-1 flex flex-col justify-center rounded-lg mb-4 md:mb-0"
+                >
+                  <div className="flex flex-row justify-between items-center w-full group">
+                    <div className="text-5xl font-bold text-outline text-primary transition-all duration-500 hover:text-primary/50 dark:text-slate-200 dark:hover:text-slate-400">
+                      {service.id}
+                    </div>
+
+                    {/* <Link
+                      href={service.id}
+                      className="w-[56px] h-[56px] flex items-center justify-center rounded-full transition-all duration-500 hover:-rotate-45 bg-primary/10 dark:bg-slate-700"
+                    >
+                      <BsArrowDownRight className="text-primary text-[24px] font-bold " />
+                    </Link> */}
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" size="sm" className="p-0">
+                        <ChevronsUpDown className="w-[40px] h-[40px] p-2 flex items-center justify-center rounded-full  hover:-rotate-180 bg-primary/10 dark:bg-slate-700" />
+                        <span className="sr-only">Toggle</span>
+                      </Button>
+                    </CollapsibleTrigger>
+                  </div>
+                  <div className="py-2 mb-1">
+                    <h2 className="text-3xl leading-none group-hover:text-primary transition-all duration-500">
+                      {service.title}
+                    </h2>
+                    <p className="text-[20px] mt-2 mb-2 leading-snug border-b-2 border-text-primary/80">
+                      {service.summary}
+                    </p>
+                    <CollapsibleContent className="space-y-2 mt-4 leading-8 transition-all duration-500">
+                      <p className="text-[18px]">{service.description}</p>
+                      <div className="">
+                        {service.technologies.map((t, i) => {
+                          return (
+                            <span
+                              key={i}
+                              className="inline-block px-2 py-1 text-sm font-semibold text-white  bg-slate-700 rounded-md mr-2 mb-2 dark:bg-primary/10
+                          dark:border-2 dark:border-primary/30 dark:text-secondary-foreground/80 dark:hover:bg-primary/20 dark:hover:border-primary/50 dark:hover:text-primary hover:bg-primary/40  hover:text-slate-900"
+                            >
+                              {t}
+                            </span>
+                          )
+                        })}
+                      </div>
+                    </CollapsibleContent>
+                  </div>
+                  <div className="border-b dark:border-primary/80 border-slate-600"></div>
+                </Collapsible>
